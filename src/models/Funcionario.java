@@ -1,34 +1,14 @@
 package models;
+abstract class Funcionario {
+    protected int matricula;
+    protected String nome;
+    protected float salario;
 
-public abstract class Funcionario {
-
-    private int matricula;
-    private String nome;
-    private float salario;
-
-    public abstract void calculaSalario();
-
-    public int getMatricula() {
-        return matricula;
-    }
-
-    public void setMatricula(int matricula) {
+    public Funcionario(int matricula, String nome) {
         this.matricula = matricula;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public float getSalario() {
-        return salario;
-    }
-
-    public void setSalario(float salario) {
-        this.salario = salario;
-    }
+    // Método abstrato para calcular salário
+    public abstract float calcularSalario();
 }
