@@ -1,8 +1,18 @@
 package models;
 public abstract class Funcionario {
-    protected int matricula;
-    protected String nome;
-    protected float salario;
+    private int matricula;
+    private String nome;
+    private float salarioHora;
+    private float horasTrabalhadas;
+
+    public Funcionario(){}
+
+    public Funcionario(int matricula, String nome, float horasTrabalhadas, float salarioHora) {
+        this.matricula = matricula;
+        this.nome = nome;
+        this.horasTrabalhadas = horasTrabalhadas;
+        this.salarioHora = salarioHora;
+    }
 
     public int getMatricula() {
         return matricula;
@@ -20,14 +30,30 @@ public abstract class Funcionario {
         this.nome = nome;
     }
 
-    public float getSalario() {
-        return salario;
+    public float getHorasTrabalhadas() {
+        return horasTrabalhadas;
     }
 
-    public void setSalario(float salario) {
-        this.salario = salario;
+    public void setHorasTrabalhadas(float horasTrabalhadas) {
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+
+    public float getSalarioHora() {
+        return salarioHora;
+    }
+
+    public void setSalarioHora(float salarioHora) {
+        this.salarioHora = salarioHora;
     }
 
     // Método abstrato para calcular salário
     public abstract float calcularSalario();
+
+    @Override
+    public String toString() {
+        return "Matrícula: " + matricula +
+               "Nome: " + nome +
+               "Horas Trabalhadas: " + horasTrabalhadas +
+               "Salário por Hora: R$" + salarioHora;
+    }
 }
