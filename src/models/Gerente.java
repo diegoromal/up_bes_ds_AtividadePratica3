@@ -35,12 +35,12 @@ public class Gerente extends Funcionario {
 
     @Override
     public void trabalhar() {
-        System.out.println("O gerente orientou seu time!");
+        System.out.println("Gerente - Orientando seu time!");
     } 
 
     @Override
     public void relatarProgresso() {
-        System.out.println("O gerente finalizou mais um projeto!");
+        System.out.println("Gerente - Finalizei mais um projeto!");
     }
 
     @Override
