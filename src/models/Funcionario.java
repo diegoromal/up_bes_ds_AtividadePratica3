@@ -1,11 +1,17 @@
 package models;
-public abstract class Funcionario {
+
+import java.text.DecimalFormat;
+
+// interface "Trabalhavel" para uso em todas as subclasses
+import interfaces.Desempenho;
+
+public abstract class Funcionario implements Desempenho {
     private int matricula;
     private String nome;
     private float salarioHora;
     private float horasTrabalhadas;
 
-    public Funcionario(){}
+    DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
     public Funcionario(int matricula, String nome, float horasTrabalhadas, float salarioHora) {
         this.matricula = matricula;
@@ -51,9 +57,9 @@ public abstract class Funcionario {
 
     @Override
     public String toString() {
-        return "Matrícula: " + matricula +
-               "Nome: " + nome +
-               "Horas Trabalhadas: " + horasTrabalhadas +
-               "Salário por Hora: R$" + salarioHora;
+        // retorno mostrando o salário calculado
+        return "\nMatrícula: " + matricula +
+               "\nNome: " + nome +
+               "\nSalário: R$" + decimalFormat.format(calcularSalario());
     }
 }

@@ -1,13 +1,9 @@
 package models;
 
-import interfaces.Desempenho;
-
-public class Gerente extends Funcionario implements Desempenho {
+public class Gerente extends Funcionario {
 
     private String equipe;
     private float bonusAnual;
-
-    public Gerente(){}
 
     public Gerente(int matricula, String nome, float horasTrabalhadas, float salarioHora, String equipe,
             float bonusAnual) {
@@ -51,7 +47,6 @@ public class Gerente extends Funcionario implements Desempenho {
     public String toString() {
         return super.toString() +
             "\nEquipe: " + equipe +
-            "\nBonus Anual: R$" + bonusAnual +
-            "\nSalário: " + calcularSalario();
+            "\nBonus Anual: R$" + decimalFormat.format(bonusAnual);
     }
 }
