@@ -3,10 +3,10 @@ package models;
 public class Estagiario extends Funcionario {
 
     private String turno;
-    private String supervisor;
+    private Funcionario supervisor;
 
     public Estagiario(int matricula, String nome, float horasTrabalhadas, float salarioHora,
-                      String turno, String supervisor) {
+                      String turno, Funcionario supervisor) {
         super(matricula, nome, horasTrabalhadas, salarioHora);
         this.turno = turno;
         this.supervisor = supervisor;
@@ -20,11 +20,11 @@ public class Estagiario extends Funcionario {
         this.turno = turno;
     }
 
-    public String getSupervisor() {
+    public Funcionario getSupervisor() {
         return supervisor;
     }
 
-    public void setSupervisor(String supervisor) {
+    public void setSupervisor(Funcionario supervisor) {
         this.supervisor = supervisor;
     }
 

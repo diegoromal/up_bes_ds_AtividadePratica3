@@ -76,8 +76,16 @@ public class Sistema {
             System.out.print("Turno de trabalho: ");
             String turno = Console.lerString();
 
-            System.out.print("Supervisor: ");
-            String supervisor = Console.lerString();
+            System.out.print("Matricula do supervisor: ");
+            int matriculaSupervisor = Console.lerInt();
+
+            if (CadastroFuncionarios.getDesenvolvedor(matriculaSupervisor) == null) {
+                System.out.println("\nO supervisor precisa ser um desenvolvedor cadastrado...");
+                return;
+            }
+
+            Funcionario supervisor = CadastroFuncionarios.getDesenvolvedor(matriculaSupervisor);
+    
 
             Estagiario estagiario = new Estagiario(matricula, nome, horasTrabalhadas, salarioHora, turno, supervisor);
             
@@ -133,8 +141,16 @@ public class Sistema {
             System.out.print("Turno de trabalho: ");
             String turno = Console.lerString();
 
-            System.out.print("Supervisor: ");
-            String supervisor = Console.lerString();
+            System.out.print("Matricula do supervisor: ");
+            int matriculaSupervisor = Console.lerInt();
+
+            if (CadastroFuncionarios.getDesenvolvedor(matriculaSupervisor) == null) {
+                System.out.println("\nO supervisor precisa ser um desenvolvedor cadastrado...");
+                return;
+            }
+
+            Funcionario supervisor = CadastroFuncionarios.getDesenvolvedor(matriculaSupervisor);
+    
 
             Estagiario estagiario = new Estagiario(matricula, nome, horasTrabalhadas, salarioHora, turno, supervisor);
             

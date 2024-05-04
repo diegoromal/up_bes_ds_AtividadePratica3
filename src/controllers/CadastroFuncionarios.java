@@ -16,7 +16,7 @@ public class CadastroFuncionarios {
     public static List<Funcionario> getListaFuncionarios() {
         return listaFuncionarios;
     }
-
+    
     public static List<Funcionario> getGerentes() {
         List<Funcionario> tempList = new ArrayList<>();
 
@@ -39,6 +39,17 @@ public class CadastroFuncionarios {
         }
 
         return tempList;
+    }
+
+    public static Funcionario getDesenvolvedor(int matricula) {
+
+        for(Funcionario tempFuncionario: listaFuncionarios) {
+            if (tempFuncionario.getMatricula() == matricula && tempFuncionario instanceof Desenvolvedor) {
+                return (Desenvolvedor) tempFuncionario;
+            }
+        }
+
+        return null;
     }
     
     public static List<Funcionario> getEstagiarios() {
